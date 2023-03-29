@@ -29,7 +29,7 @@ Basic CRUD API created with NestJs, Postgres and Docker
 ## Installation
 
 ```bash
-After run the project please be ensure to have Dokcer installed, more info in https://www.docker.com/
+After run the project please be ensure to have Dokcer installed, more info in [Docker web page](https://www.docker.com/). 
 To install all dependencies $ npm install
 ```
 
@@ -60,6 +60,8 @@ $ npm run test:cov
 ```
 
 ## Support
+
+To read the documentation please go to [Swagger documentation](https://www.docker.com/) (the app must be running). 
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
