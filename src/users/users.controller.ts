@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, UseGuards } from '@nestjs/common';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { AuthResponseDTO } from 'src/auth/dto/response-auth.dto';
 import { JwtAuthGuard } from 'src/auth/jwt/jwt-auth.guard';
 import { UserDTO } from './dto/user.dto';
@@ -23,7 +23,6 @@ export class UsersController {
     return this._userService.findOneUser(id);
   }
 
-  @ApiBearerAuth()
   @UseGuards(JwtAuthGuard)
   @Post()
   public createUser(@Body() body: UserDTO) {
@@ -38,6 +37,7 @@ export class UsersController {
   }
 
   @ApiBearerAuth()
+  @ApiOkResponse({ description: 'The user was deleted successfully' })
   @UseGuards(JwtAuthGuard)
   @Delete(':id_user')
   public deleteUser(@Param('id_user') id: number) {
