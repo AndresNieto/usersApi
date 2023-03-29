@@ -23,6 +23,7 @@ export class UsersController {
     return this._userService.findOneUser(id);
   }
 
+  @ApiBearerAuth()
   @UseGuards(JwtAuthGuard)
   @Post()
   public createUser(@Body() body: UserDTO) {
