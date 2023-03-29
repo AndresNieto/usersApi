@@ -16,7 +16,7 @@ import { AuthModule } from './auth/auth.module';
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
       retryDelay: 3000,
-      retryAttempts: 5,
+      retryAttempts: 10,
     }),
     UsersModule,
     AuthModule],
